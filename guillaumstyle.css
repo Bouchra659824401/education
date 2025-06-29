@@ -1,0 +1,1049 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,600&display=swap');
+
+
+/* variable*/
+
+:root{
+	 --hue: 200;
+	 --saturation: 70%;
+	 --lightness: 55%;
+	 --main-color: hsl(var(--hue), var(--saturation), var(--lightness));
+	 
+/*text colors */
+	 --text-white: hsl(0, 0%, 100%);
+	 --text-light-gray: hsl(0, 0%, 96%);
+	 --text-x-dark-gray: hsl(0, 0%, 20%);
+	 --text-dark-gray: hsl(0, 0%, 20%);
+	 
+/* bg colors  */
+	 --body-bg-color: hsl(var(--hue),60%, 94%);
+	 --bg-color: hsl(var(--hue), 60%, 96%);
+	 --bg-white: hsl(0, 0%, 100%);
+	 
+/* border color */
+	 --border-color: hsl(var(--hue), 48%, 80%);
+	 
+/*shadew*/
+	 --shadow: 0 0 10px hsla(var (--hue), 57%, 63%, 0,3);
+	 --focus-shadow: 0 0 10px hsla(var (--hue), 57%, 63%, 0,6);
+/* font size */
+     --fs-4xl: 50px;
+	 --fs-3xl: 35px;
+	 --fs-2xl: 26px;
+	 --fs-xl: 20px;
+	 --fs-lg: 18px;
+	 --fs-md: 16px;
+	 --fs-sm: 14px;
+}
+/* override variables for dark theme*/
+
+body.t-dark{
+	  /* text clor*/
+	 --text-x-dark-gray: hsl(0, 0%, 94%);
+	 --text-dark-gray: hsl(0, 0%, 84%);
+	 /* bg colors */
+	 --body-bg-color: hsl(var(--hue),20%, 10%);
+	 --bg-color: hsl(var(--hue), 13%, 17%);
+	 /*border color*/
+	 --border-color: hsl(var(--hue), 15%, 30%);
+	 
+	 /* shadow*/
+	 --shadow: 0 0 10px hsla(var (--hue), 19%, 7%, 0,9);
+	 
+}
+
+/* base */
+     html{
+	 scroll-behavior: smooth;
+     }
+     *{
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+     }
+     ::before,
+     ::after{
+	 box-sizing: border-box;
+     }
+     body{
+	 font-family: 'Poppins', sans-serif; /*le style de police de tout la page*/
+	 font-weight: 300; 
+	 font-size: var(--fs-md);
+	 line-height:1.5; 
+	 color: var(--text-dark-gray); /*la couleur du police*/
+	 background-color: var(--body-bg-color); /* la couleur du font de page du site web*/
+	 -webkit-text-size-adjust: 100%;
+	 -webkit-tap-highlight-color: transparent;
+    }
+a   {
+		color: var(--main-color);
+		text-decoration: none;  /* pour supprimer le soulignement du menu */
+	}
+
+ul  {
+	
+      list-style: none;
+     }
+h1,h2,h3,h4,h5,h6{
+	color: var(--text-x-dark-gray);
+	line-height: 1.3;
+}
+p{
+	margin-bottom: 15px;
+}
+/* les caractiristique de la photo lewla*/
+img{
+	max-width: 100%;	/* l3ord taha kamel*/
+	vertical-align: middle; /* w tji fel west ta3 la colonne mchi twila bzf*/
+}
+::selection{
+	color: var(--text-white);
+	background-color: var(--main-color);
+}
+::-webkit-scrollbar{
+	width: 5px;
+}	
+::-webkit-scrollbar-track{
+	background-color:var(--body-bg-color);
+}	
+::-webkit-scrollbar-thumb{
+	background-color: var(--main-color);
+}
+
+.back-video{
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: -1;
+}	
+	
+/* page wrapper  */
+.page-wrapper{
+	 overflow:hidden;
+    }
+/*  container*/
+.container{
+	
+	 max-width: 1170px ;
+	 margin: auto;
+	 padding: 0 15px;
+	
+	
+    }
+	
+/* grid */ /* hada bah la photo lewla w lketba ywello sous forme de colonne mchi line wahda hda khotha mchi fog khetha*/
+.grid{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);  
+	gap:30px;
+}
+/* section padding*/
+.section-padding{
+	padding: 60px 0;
+}
+.section-title{
+	text-align: center;
+	margin-bottom: 45px;
+}
+.section-title .title{
+	display: inline-block;
+	font-size: var(--fs-lg);
+	font-weight: 400;
+	text-transform: capitalize;
+	color: var(--main-color);
+	margin: 0 0 12px;
+	padding: 0 40px;
+	position: relative;
+}
+.section-title .title::before,
+.section-title .title::after{
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 34px;
+	background-color: var(--main-color);
+	top:50%;
+	transform: translateY(-50%);
+}
+.section-title .title::before{
+	left:0;
+}
+.section-title .title::after{
+	right:0;
+}
+.section-title .sub-title{
+	font-size: var(--fs-3xl) ;
+	text-transform: capitalize;
+}
+
+
+/* button*/
+/*hadi ta3 boutton li mktoub fiha send message*/
+button{
+	cursor: pointer; /*bah ki nhoto lcurseur fel boutton ywello main yed */
+}
+
+.btn{
+	display: inline-block; /*ne savoir plus nkhedmouha sous forme de block*/
+	padding: 10px 20px; /* la taille de cette boutton sous forme dun rectangle*/
+	background-color: var(--main-color); /*la couleur du font de boutton */
+	color: var(--text-white); /*la couleur du text blanc*/
+	font-weight: 500;
+	font-size: var(--fs-md) ;
+	text-transform: capitalize; /*majuscule au premier lettre du mots*/
+	line-height:1.5 ; /*la hauteur du boutton*/
+	font-family: inherit; /*le style du police*/
+	border: 2px solid transparent; /* les bordure transparent avec 2 px de size*/
+	border-radius: 30px; /* forme du cercle*/
+	vertical-align: middle; 
+	user-select: none;
+	transition: all 0.3s ease; /* le temps danimation*/
+}	
+.btn:hover{
+	background-color: transparent; /*la couleur du font dans lanimation apres le clic sur le btn*/
+	color: var(--main-color); /* la couleur du police apres lanimation */
+	border-color: var(--main-color); /* la couleur du bordure apres la selection et animation*/
+}
+/*forms*/
+.input-box{
+	margin-bottom: 20px;	
+}
+::placeholder{
+	color: var(--text-dark-gray);
+	opacity: 1;/**/
+}
+.input-control{
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	border: 1px solid var(--border-color);
+	background-color: transparent;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	color: var(--text-dark-gray);
+	padding: 0 20px;
+}
+.input-control:focus{
+	outline: 1px solid var(--border-color);
+	
+}
+textarea.input-control{
+	display: block;
+	height: 150px;
+	padding-top: 15px;
+	resize: none;
+	
+}
+
+/* preloader*/
+.preloader {
+	position: fixed;
+	left:0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: var(--bg-color);
+	z-index: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.preloader.fade-out{
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+.preloader div{
+	height:40px;
+	width: 40px;
+	border-radius: 50%;
+	border-left: 4px solid var(--main-color);
+	border-right: 4px solid var(--main-color);
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	animation: preloader 1s linear infinite ;
+}
+@keyframes preloader {
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+/* header */
+.header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	padding: 10px 0;
+	
+}
+.header::before{
+	content: '';
+	position: absolute;
+	left: 0 ;
+	top: 0 ;
+	height: 100%;
+	width: 100%;
+	background-color: var(--bg-color) ;
+	box-shadow: var(--shadow);
+	z-index: -1;
+	transform: translateY( calc(-100% -10px) );
+	transition: transform 0.5s ease;
+}
+.header.bg-reveal::before{
+	transform: translateY(0);
+}
+
+.header .container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* espace bin le titre guillaume w le menu yjo ko, wahda fi cote */
+}
+
+.header .logo a{
+	 font-size:28px; /*la taille du titre de logo */
+	 font-weight: bold; /* gras */
+	 text-transform: uppercase; /* le titre va etre afficher au majuscule */
+	 line-height: 1;
+	 /*
+	 display: block; */
+	 transform: scaleY(0.9);
+	 letter-spacing: 2px;
+}
+.header .logo span{
+	font-size:20px ;
+	display :block ;
+	font-weight:400 ;
+	color: var(--text-x-dark-gray);
+	letter-spacing: 1px;
+}
+/* position du logo */ 
+.header .logo img{
+	width:80px ;
+	height: 40px;
+	/*position: absolute; */
+	left: 0;
+	top:0;
+	z-index: 90;	
+	/*display: block;
+	justify-content: space-between; */
+	
+}
+/* header */
+.nav-toggler{
+	display: block;
+	height: 34px;
+	width: 40px;
+	border: none;
+	z-index: 1;
+	background-color: transparent;
+}
+.nav-toggler span{
+	display: block;
+	height: 2px;
+	width:24px ;
+	background-color: var(--main-color);
+	margin: auto;
+	position: relative;
+	transition: background-color 0.3s ease;
+}
+.nav-toggler .active span{
+	background-color: transparent;
+}
+.nav-toggler span::after,
+.nav-toggler span::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--main-color);
+	transition: transform 0.3s ease;
+}
+.nav-toggler span::before{
+	transform: translateY(-7px);	
+}
+.nav-toggler.active span::before{
+	transform: rotate(45deg);
+}
+.nav-toggler span::after{
+	transform: translateY(7px);
+}
+.nav-toggler.active span::after{
+	transform: rotate(-45deg);
+
+}
+.nav{
+	position: static;
+	right: 0;
+	top: 0;
+	height: auto;
+	width:auto;
+	background-color: transparent;
+	padding: 0;
+	overflow-y: auto;
+	transform: none;
+	transition: all 0.3s ease ;
+	
+}
+/* إخفاء القائمة الفرعية في البداية */
+.nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* للعربية */
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    min-width: 200px;
+    padding: 10px 0;
+    z-index: 1000;
+    border-radius: 5px;
+}
+/* إظهار القائمة عند تمرير المؤشر */
+.nav .has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* تنسيق العناصر داخل القائمة الفرعية */
+.nav .dropdown li {
+    margin: 0;
+}
+
+.nav .dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-x-dark-gray);
+    text-align: right;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* لا تجعل النص ينكسر لسطرين */
+}
+
+.nav .dropdown a:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+/* كلاس يُستخدم عند الضغط */
+.nav .has-dropdown.open .dropdown {
+  display: block;
+}
+/* تأكد من أن العنصر الأب يمكنه استقبال position relative */
+.nav li.has-dropdown {
+    position: relative;
+}
+.nav.open {
+	transform: translateX(0);
+	box-shadow: var(--shadow);
+}
+.nav li{
+	display: inline-block; /* les element du menu yjiw sous forme de block*/
+	margin-left: 35px;	
+}
+.nav a {
+	text-transform: capitalize;
+	font-size: var(--fs-md);
+	color: var(--text-x-dark-gray);
+	font-weight: 400;
+	display: block;
+	padding: 10px 0;
+	transition: color 0.3s ease; /* le temp bah tetnehana hadik animation*/
+}
+.nav a:hover{
+	color: var(--main-color);
+}
+
+
+/* home*/
+.home{
+	padding: 100px 0 60px;	
+}
+.home-text, 
+.home-img{
+	grid-column: span 6; /* la column ta3 text zednalha fel 3ord */
+	align-self: center; /* rodina text fel west centre*/
+}
+/* les caracteristique du tire lewel kml*/
+.home-text h1{
+	font-size: var(--fs-4xl);
+	margin: 200px 0  20px;
+	text-transform: capitalize; /*bah ndiro titre en majuscule les premier lettres seulement*/
+	color: white;
+	
+}
+/*les caracteristique du text paragraphe*/
+.home-text p{
+	
+	margin: 0 0 30px;
+	color: black;
+	background-color: white;
+	opacity: 0.7;
+	text-transform: capitalize;
+}
+
+.home-img{
+	position: relative;
+}
+/*  *** had css bah nkhedmo cercle bleu ndirouh au font de image 
+.home-img .circle-wrap{
+   
+	position: absolute ;
+	left: 50%;
+	top: 50%;
+	z-index:-1;
+}
+
+.home-img .circle{
+	height:350 px ;
+	width: 350 px;
+	background-color: var(--main-color);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+.home-img img{
+	max-width: 270px ;
+	display: block;
+	margin: auto;
+} */
+.home-img img{
+	border-radius: 50%;
+}
+*/
+/*  about  */
+.about .section-title{
+	text-align: center;
+	margin: 0 0 15px ; 
+	
+}
+.about-img,
+.about-text{
+	grid-column: span 6;
+	
+}
+/* bah tkhdemena cercle wra image ta3na */
+
+.about-img .img-box{
+	/*max-width: 400px; */
+	margin: auto; 
+	padding: 15px; 
+	border-radius: 50%; 
+	background-color: var(--bg-color); 
+	box-shadow: var(--shadow); 
+	position: relative;
+}
+
+.about-img .img-box img{
+	border-radius: 50%;
+}
+
+/* bah tesna3ana  wahda kima boutton tji fel cote */ 
+
+.about-img .box{
+	height: 125px;
+	width: 125px;
+	background-color: var(--main-color);
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	border-radius: 0 40px; 
+	padding: 15px;	
+}
+.about-img .box-1{
+	top: 50%;
+	left: 0;
+	transform: translate(-50%, -50%);
+}
+.about-img .box span{
+	color: var(--text-white);
+	font-weight: bold;
+	font-size: var(--fs-3xl);
+	margin: 0 0 5px;
+	line-height:1;
+}
+.about-img .box p{
+	
+	font-size: var(--fs-sm);
+	text-transform: uppercase;
+	color: var(--text-light-gray) ;
+	margin:0;
+}
+
+
+/* services */
+.services-item{
+	grid-column: span 3;
+	text-align: center;
+	
+}
+.services-item .img-box{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+	box-shadow: var(--shadow);
+	background-color: var(--main-color) ;
+	padding: 8px;
+	overflow: hidden;
+
+}
+.services-item .img-box img{
+	
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	transition: transform 0.5s ease;
+}
+.services-item:hover .img-box img{
+	transform: scale(1.5);
+}
+.services-item h3{
+	text-transform: capitalize;
+	font-size: var(--fs-xl);
+	font-weight: 500;
+	
+}
+/*pricing*/
+.pricing-item{
+	grid-column: span 4;
+	background-image: url(img2.png); /*faire une image comme font decran */  /* le font va etre fixe  */
+	background-repeat : no-repeat;  /* le font ne sera pas repete */
+	
+	
+	
+	
+	/* le font sera placer eu centre en haut la deuxieme valeur la dimention de hauteur   */
+	
+	/*
+	background-color: var(--bg-color);
+	box-shadow: var(--shadow);
+	padding: 30px;
+	border-radius: 10px;
+	text-align: center;
+	margin-left: 40px;
+	margin-right: 40px;
+	*/
+}
+.pricing-header h3{
+	text-transform: capitalize;
+	margin: 0 0 20px;
+	font-size: var(--fs-2xl);
+	font-weight: 600;
+	
+}
+.pricing-header .price{
+	height: 140px ;
+	width: 140px ;
+	box-shadow: inset var(--shadow) ;
+	margin: auto;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--fs-sm);
+	text-transform: capitalize;
+}
+.pricing-header .price span{
+	font-size: var(--fs-3xl);
+	color: var(--main-color);
+	font-weight:blod ;
+	line-height: 1.3;
+}
+.pricing-body {
+	padding:  30px 0;
+	text-align: left;
+}
+.pricing-body li{
+	text-transform: capitalize;
+	position: relative;
+	padding-left: 27px;
+	
+}
+.pricing-body li+li{
+	margin-top:10px ;
+}
+.pricing-body li i{
+	position: absolute;
+	left: 0;
+	top: 5px;
+	font-size: var(--fs-sm);
+}
+/*contact*/
+.contact-grid{
+	max-width:1000px ;
+	margin: auto;
+}
+.contact-info{
+	grid-column: span 5;
+}
+.contact-form{
+	grid-column: span 7;
+	
+}
+.contact-info-item{
+	position: relative;
+	padding: 20px 0 20px 70px;
+}
+.contact-info-item + .contact-info-item{
+	margin-top: 20px;
+	border-top: 1px solid var(--border-color); /*hadi taffichilna dak lkhat wela ster li binathoum*/
+}
+.contact-info-item i {
+	height:50px ;
+	width:50px ;
+	background-color: var(--bg-color) ;
+	box-shadow: var(--shadow);
+	color: var(--main-color);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 20px;
+}
+.contact-info-item h3{
+	margin: 0 0 10px;
+	font-size: var(--fs-xl);
+	font-weight:500 ;
+	text-transform: capitalize;
+}
+.contact-info-item p:last-child{
+	margin: 0;
+}
+/*footer*/
+.footer{
+	background-color: var(--main-color);
+	padding: 50px 0;
+	text-align: center;
+}
+.footer h3{
+	color: var(--text-white);
+	font-size: var(--fs-2xl);
+	margin: 0 0 15px;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+.footer .social-links a{
+	height: 40px;
+	width: 40px;
+	display: inline-flex;
+	background-color: var(--bg-white);
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	margin: 0 4px;
+	border: 1px solid transparent;
+	transition: all 0.5s ease;
+}
+.footer .social-links a:hover{
+	background-color: transparent;
+	color: var(--text-white);
+	border-color: initial;
+}
+.container1{
+	max-width: 1170px;
+	margin: auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.liste-services{
+	list-style-type: none;
+}
+.footer1{
+	background-color:#24262b;
+	padding: 70px 0;	
+}
+.footer1-col{
+	width: 25%;
+	padding: 0 15px;
+}
+.footer1-col h3{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin: 25px;
+	font-weight: 500;
+	position: relative;
+	
+}
+
+.footer1-col h3::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+	
+}
+.footer1-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+/*     */
+.footer1-col ul li a {
+	font-size:16px;/*     */
+	text-transform: capitalize;/*     */
+	color: #ffffff;/*     */
+	text-decoration: none;/*     */
+	font-weight: 300;/*     */
+	color: #bbbbbb;/*     */
+	display: block;/*     */
+	transition: all 0.3s ease; /* le tems danimation est 0.3 secande     */
+}
+/*  pour lannimation des element du bloc du footer   */
+.footer1-col ul li a:hover{
+	color: #ffffff; /*  la couleur blanc affiche tantque le clique sur tel titre ou bloc   */
+	padding-left: 10px;/*   le bloc doit annimer a la gauche  */
+	
+}
+.footer1-col .social1-links a {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color:rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+    border-radius: 50%; /* une forme rond au image */
+    color: var(--main-color);	
+	transition: all 0.5s ease;
+}
+.footer1-col  .social1-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+.footer1-col i {
+	color: var(--main-color);
+}
+
+/* responsive */
+@media(max-width: 767px) {
+	.footer1-col{
+		width: 25%;
+		margin-bottom: 30px;
+	}
+}
+@media(max-width: 574px) {
+	.footer1-col{
+		width: 100%;
+	}
+}
+/*responsive*/
+
+@media(max-width: 1199px){
+	.about-img .box-1{
+		top:100%;
+		left:50%;
+	}
+}
+@media(max-width: 991px){
+	/*variables*/
+	:root{
+		--fs-4xl: 42px;
+		--fs-3xl: 31px;
+		--fs-2xl: 24px;
+		
+	}
+	/*home*/
+	.home-img img{
+		max-width: 250px;
+	}
+	.hero video{
+		max-width: 500px;
+	}
+	.hero .back-video{
+		height: 100%;
+		width: 100%;
+	}
+	
+	.home-img .circle{
+		height: 290px;
+		width: 290px;
+	}
+	/*services*/
+	.services-item .img-box{
+		height: 120px;
+		width: 120px;
+		
+	}
+	.pricing-item{
+		grid-column: span 6;
+	}
+	.pricing-header .price {
+		height: 130px;
+		width: 130px;
+	}
+	/* team */
+	.team-item{
+		grid-column: span 6;
+		
+	}
+}
+@media(max-width: 767px){
+	/*variables*/
+	:root{
+		--fs-4xl: 35px;
+		--fs-3xl: 26px;
+		--fs-2xl: 22px;
+		--fs-xl: 18px;
+	}
+	/*
+	.container .logo img{
+		width: 170px;
+		height: 80px;
+		
+	}
+	.container .logo a{
+		width: 20px;
+		height: 70px;
+		
+	}
+	*/
+	/*header*/
+	.nav-toggler{
+		display: block;
+		height: 34px;
+		width: 40px;
+		border: none;
+		z-index: 1;
+		background-color: transparent;
+	}
+	.nav-toggler span{
+		display: block;
+		height: 2px;
+		width: 24px;
+		background-color: var(--main-color);
+		margin: auto;
+		position: relative;
+		transition: background-color 0.3s ease;
+	}
+	.nav-toggler.active span{
+		background-color: transparent;
+		
+	}
+	.nav-toggler span::after,
+	.nav-toggler span::before {
+	    content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--main-color);
+		transition: transform 0.3s ease;
+	}
+	
+	.nav-toggler span::before{
+		transform: translateY(-7px);
+	}
+	.nav-toggler.active span::before{
+		transform: rotate(45deg);
+	}
+	.nav-toggler span::after{
+		transform: translateY(7px);
+	}
+	.nav-toggler.active span::after{
+		transform: rotate(-45deg);
+	}
+	.nav{
+		position: fixed;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		width: 260px;
+		background-color: var(--bg-color);
+		padding: 60px 30px 30px;
+		overflow-y: auto;
+		transform: translateX(100%);
+		transition: all 0.3s ease;
+	}
+	.nav .open{
+		transform: translateX(0);
+		box-shadow: var(--shadow);
+		
+	}
+	.nav li{
+		display: block;
+		margin: o;
+	}
+	.nav a {
+		font-size: var(--fs-lg);
+	}
+	.nav li + li {
+		border-top: 1px solid var(--border-color); /*hadi bah yji bin kol element fel menu w khouh binhoum khat border*/
+	}
+	/* home*/
+	.home-text,
+	.home-img{
+		grid-column: span 12;
+	}
+	.home-img{
+		order: -1;
+		margin-bottom: 20px;
+	}
+	.about-img, .about-text{
+		grid-column: span 12;
+	}
+	.about-text{
+		order: -1;
+	}
+	.about-img .box{
+		height: 115px;
+		width: 115px;
+	}
+	/*services*/
+	.services-item{
+		grid-column: span 6;
+	}
+	/*pricing*/
+	.pricing-header .price{
+		height:120px ;
+		width:120px ;
+	}
+	/*contact*/
+	.contact-info,
+	.contact-form{
+		grid-column: span 12;
+	}
+	.contact-info{
+		margin-bottom: 30px;
+	}
+}
+@media(max-width: 575px){
+	/*grid*/
+	.grid{
+		gap: 30px 15px;
+	}
+	/*home*/
+	.home-img img{
+		max-width: 200px;
+	}
+	.home-img .circle{
+		height:250px;
+		width: 250px;
+	}
+	/*pricing*/
+	.pricing-item{
+		grid-column: span 12;
+	}
+	/*team*/
+	.team-item{
+		grid-column: span 12;
+	}
+	
+}
+
+
